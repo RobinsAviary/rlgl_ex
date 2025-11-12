@@ -50,3 +50,42 @@ Normal3fVector3 :: proc(vector: rl.Vector3) {
 ClearColorRL :: proc(color: rl.Color) {
 	rlgl.ClearColor(color.r, color.g, color.b, color.a)
 }
+
+DrawTriangleColor :: proc(points: [3]rl.Vector2, colors: [3]rl.Color) {
+	rlgl.Begin(.TRIANGLES)
+
+	for i := 0; i < len(points); i += 1 {
+		ColorRL(colors[i])
+		Vertex2fVector2(points[i])
+	}
+
+	rlgl.End()
+}
+
+DrawRectangleColor :: proc(points: [4]rl.Vector2, colors: [4]rl.Color) {
+	rlgl.Begin(.QUADS)
+
+	indices: []uint = {0, 1, 3, 2}
+
+	for i := 0; i < len(points); i += 1 {
+		ColorRL(colors[i])
+		Vertex2fVector2(points[indices[i]])
+	}
+
+	rlgl.End()
+}
+
+DrawRectangleColorEx :: proc(rectangle: rl.Rectangle, colors: [4]rl.Color) {
+	DrawRectangleColor({rectangle.x, rectangle.y, rectangle.x + rectangle.width, rectangle.y + rectangle.height}, colors)
+}
+
+DrawLineColor :: proc(points: [2]rl.Vector2, colors: [2]rl.Color) {
+	rlgl.Begin(.LINES)
+
+	for color, i in colors {
+		ColorRL(color)
+		Vertex2fVector2(points[i])
+	}
+
+	rlgl.End()
+}
