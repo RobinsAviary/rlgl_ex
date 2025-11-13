@@ -4,7 +4,7 @@
 
 This library leverages `rlgl` and `raylib` in order to make advanced graphics rendering simpler.
 
-It also contains various functions deemed too excessive to be included with base rlgl.
+It also contains various functions deemed too excessive to be included with base `rlgl`.
 
 ## Docs
 
