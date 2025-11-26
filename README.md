@@ -12,19 +12,19 @@ It is intended to be used alongside `vendor:raylib/rlgl`.
 
 Define one vertex (color)
 
-`ColorRL :: proc(color: rl.Color)`
+`VertexColor :: proc(color: rl.Color)`
 
 Define one vertex (color) - 3 byte
 
-`Color3ub :: proc(r, g, b: u8)`
+`VertexColor3ub :: proc(r, g, b: u8)`
 
 Define one vertex (position) - 2 f32
 
-`Vertex2fVector2 :: proc(vector: rl.Vector2)`
+`VertexPosition2 :: proc(vector: rl.Vector2)`
 
 Define one vertex (texture coordinate) - 2 f32
 
-`TexCoord2fVector2 :: proc(vector: rl.Vector2)`
+`VertexTexCoord2 :: proc(vector: rl.Vector2)`
 
 Define one vertex (position) - 3 f32
 
@@ -32,23 +32,23 @@ Define one vertex (position) - 3 f32
 
 Multiply the current matrix by a translation matrix
 
-`TranslatefVector3 :: proc(vector: rl.Vector3)`
+`MatrixTranslate3 :: proc(vector: rl.Vector3)`
 
 Multiply the current matrix by a rotation matrix
 
-`RotatefVector3 :: proc(angleDeg: f32, vector: rl.Vector3)`
+`MatrixRotate3 :: proc(angleDeg: f32, vector: rl.Vector3)`
 
 Multiply the current matrix by a scaling matrix
 
-`ScalefVector3 :: proc(vector: rl.Vector3)`
+`MatrixScale3 :: proc(vector: rl.Vector3)`
 
 Define one vertex (normal) - 3 f32
 
-`Normal3fVector3 :: proc(vector: rl.Vector3)`
+`MatrixNormal3 :: proc(vector: rl.Vector3)`
 
 Clear color buffer with color
 
-`ClearColorRL :: proc(color: rl.Color)`
+`ClearColor :: proc(color: rl.Color)`
 
 `DrawTriangleColor :: proc(points: [3]rl.Vector2, colors: [3]rl.Color)`
 
