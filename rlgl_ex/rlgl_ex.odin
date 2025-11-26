@@ -20,7 +20,7 @@ VertexPosition2 :: proc(vector: rl.Vector2) {
 }
 
 // Define one vertex (texture coordinate) - 2 f32
-VertexTexCoord :: proc(vector: rl.Vector2) {
+VertexTexCoord2 :: proc(vector: rl.Vector2) {
 	rlgl.TexCoord2f(vector.x, vector.y)
 }
 
@@ -63,7 +63,7 @@ DrawTriangleColor :: proc(points: [3]rl.Vector2, colors: [3]rl.Color, uv: [3]rl.
 		VertexColor(colors[i])
 		
 		if len(uv) >= len(points) {
-			VertexTexCoord(uv[i])
+			VertexTexCoord2(uv[i])
 		}
 
 		VertexPosition2(points[i])
@@ -85,7 +85,7 @@ DrawRectangleColor :: proc(points: [4]rl.Vector2, colors: [4]rl.Color, uv: []rl.
 		VertexColor(colors[i])
 
 		if len(uv) >= len(points) {
-			VertexTexCoord(uv[i])
+			VertexTexCoord2(uv[i])
 		}
 
 		VertexPosition2(points[indices[i]])
